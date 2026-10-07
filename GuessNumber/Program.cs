@@ -87,7 +87,7 @@ switch (choice)
         Console.WriteLine($"Ошибка: пункт «{choice}» не существует. Введите число от 1 до 4.");
         break;
 }*/
-Console.Write("\nВведите номер месяца (1-12): ");
+/*Console.Write("\nВведите номер месяца (1-12): ");
 int month = int.Parse(Console.ReadLine());
 
 switch (month) {
@@ -114,4 +114,71 @@ switch (month) {
     default:
         Console.WriteLine("Такого месяца не существует.");
         break;
+}*/
+Random random = new Random();
+int secret = random.Next(1, 101);
+
+int attempts = 0;
+bool guessed = false;
+
+Console.WriteLine("Угадай число (1-100)");
+Console.WriteLine("Я загадал число. Попробуй угадать!");
+
+while (!guessed)
+{
+    Console.Write("\nВведите число: ");
+    string input = Console.ReadLine();
+
+    if (!int.TryParse(input, out int guess))
+    {
+        Console.WriteLine("!!! Ошибка: введите целое число!");
+        continue;
+    }
+
+    if (guess < 1 || guess > 100)
+    {
+        Console.WriteLine("!!! Число должно быть от 1 до 100!");
+        continue;
+    }
+
+    attempts++;
+
+    if (guess < secret)
+    {
+        int diff = secret - guess;
+        string hint = GetHint(diff);
+        Console.WriteLine($"↑ Больше! {hint}\n");
+    }
+    else if (guess > secret)
+    {
+        int diff = guess - secret;
+        string hint = GetHint(diff);
+        Console.WriteLine($"↓ Меньше! {hint}\n");
+    }
+    else
+    {
+        guessed = true;
+    }
+}
+
+string result = attempts <= 7
+    ? $"Отличный результат! Всего {attempts} попыток."
+    : $"Число найдено за {attempts} попыток. Можно лучше!";
+
+Console.WriteLine($"\nПравильно! Загаданное число: {secret}");
+Console.WriteLine($"{result}");
+
+static string GetHint(int diff)
+{
+    switch (diff)
+    {
+        case <= 3:
+            return "🔥 Горячо!";
+        case <= 10:
+            return "🌡 Тепло!";
+        case <= 20:
+            return "🌀 Прохладно!";
+        default:
+            return "❄ Холодно!";
+    }
 }
