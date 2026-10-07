@@ -115,7 +115,7 @@ switch (month) {
         Console.WriteLine("Такого месяца не существует.");
         break;
 }*/
-Random random = new Random();
+/*Random random = new Random();
 int secret = random.Next(1, 101);
 
 int attempts = 0;
@@ -181,4 +181,134 @@ static string GetHint(int diff)
         default:
             return "❄ Холодно!";
     }
+}*/
+/*Console.Write("Введите пароль: ");
+string a = Console.ReadLine();
+
+Console.Write("Подтвердите пароль: ");
+string b = Console.ReadLine();
+
+if (a == b)
+{
+    Console.WriteLine("Пароль принят");
+}
+else
+{
+    Console.WriteLine("Пароль не принят");
+}
+Console.Write("Введите возраст: ");
+int age = int.Parse(Console.ReadLine());
+
+if (age >= 18)
+{
+    Console.WriteLine("Доступ разрешён");
+}
+else
+{
+    Console.WriteLine("Доступ запрещён");
+}*/
+/*Console.Write("Введите первое число: ");
+double a = double.Parse(Console.ReadLine());
+
+Console.Write("Введите второе число: ");
+double b = double.Parse(Console.ReadLine());
+
+Console.Write("Введите операцию (+, -, *, /): ");
+string op = Console.ReadLine();
+
+switch (op)
+{
+    case "+":
+        Console.WriteLine($"{a} + {b} = {a + b}");
+        break;
+    case "-":
+        Console.WriteLine($"{a} - {b} = {a - b}");
+        break;
+    case "*":
+        Console.WriteLine($"{a} * {b} = {a * b}");
+        break;
+    case "/":
+        if (b != 0)
+        {
+            Console.WriteLine($"{a} / {b} = {a / b}");
+        }
+        else
+        {
+            Console.WriteLine("Ошибка: деление на ноль!");
+        }
+        break;
+    default:
+        Console.WriteLine("Ошибка: неизвестная операция!");
+        break;
+}*/
+/*Console.Write("Введите первое число: ");
+int a = int.Parse(Console.ReadLine());
+
+Console.Write("Введите второе число: ");
+int b = int.Parse(Console.ReadLine());
+
+Console.Write("Введите третье число: ");
+int c = int.Parse(Console.ReadLine());
+
+int sum = 0;
+
+if (a > 0)
+{
+    sum = sum + a;
+}
+if (b > 0)
+{
+    sum = sum + b;
+}
+if (c > 0)
+{
+    sum = sum + c;
+}
+
+Console.WriteLine(sum);*/
+Console.WriteLine("Вы стоите перед первой дверью.");
+Console.WriteLine("Путь А: Войти в комнату с огромным драконом.");
+Console.WriteLine("Путь В: Пойти по тёмному коридору.");
+Console.Write("Выберите путь (А или В): ");
+string a = Console.ReadLine();
+
+if (a == "А")
+{
+    Console.WriteLine("Дракон говорит: Кто не дышит, но живёт; хоть не нужно — много пьёт; и в жизни, и в смерти тело как лёд.");
+    Console.Write("Ваш ответ: ");
+    string b = Console.ReadLine();
+
+    if (b == "рыба")
+    {
+        Console.WriteLine("Дракон открыл дверь. Вы победили!");
+    }
+    else
+    {
+        Console.WriteLine("Дракон вас съел!");
+    }
+}
+else if (a == "В")
+{
+    Console.WriteLine("Вы в тёмной комнате с двумя дверями.");
+    Console.WriteLine("Дверь 1: Сокровища Dungeon Master'а.");
+    Console.WriteLine("Дверь 2: Ловушка с ядовитыми шипами.");
+    Console.Write("Выберите дверь (1 или 2): ");
+    string c = Console.ReadLine();
+
+    if (c == "1")
+    {
+        Console.WriteLine("Вы получили сокровища!");
+    }
+    else if (c == "2")
+    {
+        Console.WriteLine("Вы попали в ловушку!");
+    }
+    else
+    {
+        Console.WriteLine("Неверный выбор двери.");
+    }
+}
+else
+{
+    Console.WriteLine("Неверный выбор пути.");
 }
